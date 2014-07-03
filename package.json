@@ -16,6 +16,9 @@
     "mysql": "*",
     "sequelize": "~1.7.9",
     "jsonfile": "~1.2.0",
-    "coffee-script": "latest"
+    "coffee-script": "latest",
+    "db-migrate": "latest",
+    "lodash": "latest",
+    "async": "latest"
   }
 }

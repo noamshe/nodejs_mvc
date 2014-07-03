@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
   password : ''
 });
 
-connection.query('USE test_database');
+//connection.query('USE test_database');
 
 module.exports = connection;
 
