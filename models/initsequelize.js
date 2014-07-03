@@ -7,7 +7,7 @@ var fs        = require('fs')
   , path      = require('path')
   , Sequelize = require('sequelize')
   , lodash    = require('lodash')
-  , sequelize = new Sequelize('sequelize_test', 'root', null)
+  , sequelize = new Sequelize('users_tasks_db', 'root', null)
   , db        = {}
 
 fs

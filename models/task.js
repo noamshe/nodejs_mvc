@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         Task.belongsTo(models.User)
       }
     }
-  })
+  });
 
-  return Task
+  return Task;
 }

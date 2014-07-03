@@ -60,11 +60,9 @@ module.exports.addUserAndTask = function(req, res) {
   var task = req.body.task;
 
   dbseq.User.create({ username: userName, email: userEmail }).complete(function(err, source) {
-    dbseq.Task.create({ title: task }).complete(function(err, target) {
-      target.setUser(source).complete(function(err) {
-        res.location("userlist");
-        res.redirect("userlist");
-      })
+    dbseq.Task.create({ title: task, UserId: source.id }).complete(function(err, target) {
+      res.location("userlist");
+      res.redirect("userlist");
     })
   })
 };
@@ -87,11 +85,11 @@ module.exports.saveUserAndTask = function(req, res) {
   console.log(req.body);
 
   dbseq.User.find({ where: {username: selectedUsername}} ).complete(function(err, source) {
-    dbseq.Task.create({ title: task }).complete(function(err, target) {
-      target.setUser(source).complete(function(err) {
+    dbseq.Task.create({ title: task, UserId: source.id }).complete(function(err, target) {
+//      target.setUser(source).complete(function(err) {
         res.location("userlist");
         res.redirect("userlist");
-      })
+//      })
     })
   })
 }

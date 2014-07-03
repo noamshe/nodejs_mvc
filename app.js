@@ -4,9 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var routes = require('./routes/index');
-var usersControllers = require('./controllers/users.js');
-
+var coffee = require('coffee-script');
+coffee.register();
 var app = express();
 
 // view engine setup
@@ -19,7 +18,6 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 var connection = require('./utils/mysqlconnector.js')
 // Make our db accessible to our router
 app.use(function(req,res,next){
@@ -29,16 +27,6 @@ app.use(function(req,res,next){
 
 require('./conf/routes.js')(app);
 
-//app.use('/', routes);
-//app.use('/', usersControllers);
-//app.get('/newuser2', usersControllers.myfunc);
-//app.get('/newuser2',
-//  function(req, res) {
-//    res.render('newuser', { title: 'Add New User' });
-//  }
-//  );
-
-
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -47,7 +35,6 @@ app.use(function(req, res, next) {
 });
 
 /// error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

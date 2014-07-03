@@ -1,0 +1,16 @@
+{
+  "development": {
+    "driver": "mysql",
+    "host": "localhost",
+    "database": "users_tasks_db",
+    "user": "root",
+    "password": "",
+    "reports": {
+      "driver": "mysql",
+      "host": "localhost",
+      "database": "rtb_reports",
+      "user": "root",
+      "password": ""
+    }
+  }
+}
