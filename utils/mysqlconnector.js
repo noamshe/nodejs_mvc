@@ -3,7 +3,7 @@
  * Created by noam on 7/3/14.
  */
 
-// **** databases connnection
+// **** databases connnection -- this is not in use, since sequelize is in use
 var path = require('path');
 var mysql = require('mysql');
 //  var app = express();
