@@ -1,0 +1,8 @@
+extends layout
+block content
+    h1= title
+    form#formAddUser(name="adduserandtask",method="post",action="/adduserandtask")
+        input#inputUserName(type="text", placeholder="username", name="username")
+        input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
+        input#inputUserEmail(type="text", placeholder="task", name="task")
+        button#btnSubmit(type="submit") submit

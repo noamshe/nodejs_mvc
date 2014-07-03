@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //var routes = require('./routes/index');
-var users = require('./routes/users');
 var usersControllers = require('./controllers/users.js');
 
 var app = express();
@@ -72,7 +71,7 @@ app.use(function(err, req, res, next) {
 });
 
 // this initialize sequelize check it out
-//var db = require('./models')
+//var db = require('./models/initsequelize.js')
 //db.sequelize.sync({ force: true });
 
 module.exports = app;

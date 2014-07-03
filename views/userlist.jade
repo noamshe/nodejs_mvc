@@ -1,9 +1,15 @@
 extends layout
-
 block content
-    h1.
-        User List
-    ul
-        each user, i in users
-            li
-                a(href="mailto:#{user.email}")= user.first_name
+ h1= title
+ h2 Users
+ ul
+ each user in users
+   li
+     l User Name:
+     = user.username
+     l User Email:
+     = user.email
+     ul(style='background-color: #F8F8F8;')
+       each task in user.tasks
+         li
+           = task.title
