@@ -16,5 +16,7 @@ module.exports = function(app) {
 
   app.get('/addtasktouser', usersControllers.addTaskToUser);
   app.post('/saveuserwithtask', usersControllers.saveUserAndTask);
+
+  app.get('/angular', usersControllers.angular);
 }
 

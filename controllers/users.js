@@ -93,3 +93,7 @@ module.exports.saveUserAndTask = function(req, res) {
     })
   })
 }
+
+module.exports.angular = function(req, res) {
+  res.render('angular_view', { title: 'Angular View' });
+}
