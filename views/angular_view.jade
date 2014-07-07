@@ -36,3 +36,38 @@ block content
     button.btn.btn-default(ng-click='open("lg")') Large modal
     button.btn.btn-default(ng-click='open("sm")') Small modal
     div(ng-show='selected') Selection from a modal: {{ selected }}
+
+
+  div(ng-controller='ProgressDemoCtrl')
+    h3 Static
+    .row
+      .col-sm-4
+        progressbar(value='55')
+      .col-sm-4
+        progressbar.progress-striped(value='22', type='warning') 22%
+      .col-sm-4
+        progressbar.progress-striped.active(max='200', value='166', type='danger')
+          i 166 / 200
+    hr
+    h3
+      | Dynamic
+      button.btn.btn-sm.btn-primary(type='button', ng-click='random()') Randomize
+    progressbar(max='max', value='dynamic')
+      span(style='color:black; white-space:nowrap;') {{dynamic}} / {{max}}
+    small
+      em No animation
+    progressbar(animate='false', value='dynamic', type='success')
+      b {{dynamic}}%
+    small
+      em Object (changes type based on value)
+    progressbar.progress-striped.active(value='dynamic', type='{{type}}')
+      | {{type}}
+      i(ng-show='showWarning') !!! Watch out !!!
+    hr
+    h3
+      | Stacked
+      button.btn.btn-sm.btn-primary(type='button', ng-click='randomStacked()') Randomize
+    progress
+      bar(ng-repeat='bar in stacked track by $index', value='bar.value', type='{{bar.type}}')
+        span(ng-hide='bar.value < 5') {{bar.value}}%
+
