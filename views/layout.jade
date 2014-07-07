@@ -1,11 +1,14 @@
 doctype html
-html
+html(ng-app='MyAngularApp')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    //script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js')
+    script(src='http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js')
+    link(rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
     script(src='/angular_app.js', type='text/javascript')
     script(src='/controllers/angular_controller.js', type='text/javascript')
+    script(src='/controllers/collapse_demo_ctrl.js', type='text/javascript')
+    script(src='/controllers/modal_controller.js', type='text/javascript')
   body
     block content

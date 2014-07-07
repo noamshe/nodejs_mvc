@@ -2,7 +2,7 @@ extends layout
 block content
   l hello angular
   title Learning AngularJS
-  #content(ng-app='MyAngularApp', ng-controller='angularController')
+  #content(ng-controller='angularController')
     | {{understand}}
     input(type='text', ng-model='inputValue')
     | {{inputValue}}
@@ -13,3 +13,26 @@ block content
     ul
       li(ng-repeat='person in people | filter:searchText') {{person.id}} {{person.name}}
 
+  #somediv(ng-controller='collapsedemoctrl')
+    button.btn.btn-default(ng-click='isCollapsed = !isCollapsed') Toggle collapse
+      hr
+      div(collapse='isCollapsed')
+        .well.well-lg Some content
+
+  #somediv2(ng-controller='ModalDemoCtrl')
+    script#myModalContent(type='text/ng-template')
+      .modal-header
+        h3.modal-title I'm a modal!
+      .modal-body
+        ul
+          li(ng-repeat='item in items')
+            a(ng-click='selected.item = item') {{ item }}
+        | Selected:
+        b {{ selected.item }}
+      .modal-footer
+        button.btn.btn-primary(ng-click='ok()') OK
+        button.btn.btn-warning(ng-click='cancel()') Cancel
+    button.btn.btn-default(ng-click='open()') Open me!
+    button.btn.btn-default(ng-click='open("lg")') Large modal
+    button.btn.btn-default(ng-click='open("sm")') Small modal
+    div(ng-show='selected') Selection from a modal: {{ selected }}
