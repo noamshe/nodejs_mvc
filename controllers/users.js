@@ -112,3 +112,8 @@ module.exports.save_ajax = function(req, res) {
   obj.result = "this is an ajax result straight from the server :-)";
   res.send(obj)
 }
+
+module.exports.admin = function(req, res) {
+  // do something
+  res.render('bootstrap', { title: '' });
+}
