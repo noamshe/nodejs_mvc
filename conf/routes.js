@@ -18,5 +18,7 @@ module.exports = function(app) {
   app.post('/saveuserwithtask', usersControllers.saveUserAndTask);
 
   app.get('/angular', usersControllers.angular);
+  app.get('/ajax_example', usersControllers.ajax_view);
+  app.get('/save_ajax_example', usersControllers.save_ajax);
 }
 

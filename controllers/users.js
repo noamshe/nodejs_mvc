@@ -94,6 +94,21 @@ module.exports.saveUserAndTask = function(req, res) {
   })
 }
 
+
+// *** Examples ***
 module.exports.angular = function(req, res) {
   res.render('angular_view', { title: 'Angular View' });
+}
+
+module.exports.ajax_view = function(req, res) {
+  // do something
+  res.render('ajax_view', { title: 'Send ajaxly ' });
+}
+
+module.exports.save_ajax = function(req, res) {
+  // do something
+  var obj = {};
+  obj.title = "this is the title";
+  obj.result = "this is an ajax result straight from the server :-)";
+  res.send(obj)
 }

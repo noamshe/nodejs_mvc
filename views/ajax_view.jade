@@ -1,0 +1,8 @@
+extends layout
+block content
+    h1= title
+      div(ng-controller='ajaxController')
+        button(ng-click='myData.doClick(item, $event)') Send AJAX Request
+        br
+        | Data from server: {{myData.fromServer}}
+
