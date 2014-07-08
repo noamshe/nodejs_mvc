@@ -1,0 +1,10 @@
+//
+   Created by noam on 7/8/14.
+
+#somediv2(ng-controller='ModalDemoCtrl')
+  include tpl
+  button.btn.btn-default(ng-click='open()') Open me!
+  button.btn.btn-default(ng-click='open("lg")') Large modal
+  button.btn.btn-default(ng-click='open("sm")') Small modal
+  div(ng-show='selected') Selection from a modal: {{ selected }}
+
