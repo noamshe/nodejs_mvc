@@ -107,10 +107,34 @@ module.exports.ajax_view = function(req, res) {
 
 module.exports.save_ajax = function(req, res) {
   // do something
+
+  fs = require('fs');
+
+  getDirs = function(rootDir) {
+    var dirs, file, filePath, files, stat, _i, _len;
+    files = fs.readdirSync(rootDir);
+    dirs = [];
+    for (_i = 0, _len = files.length; _i < _len; _i++) {
+      file = files[_i];
+      if (file[0] !== '.') {
+        filePath = "" + rootDir + "/" + file;
+        stat = fs.statSync(filePath);
+        if (stat.isDirectory()) {
+          dirs.push(file);
+        }
+      }
+    }
+    return dirs;
+  };
+  var dirs1 = getDirs("/cygwin/home/git");
+  var myJsonString = JSON.stringify(dirs1);
+
+  /*
   var obj = {};
   obj.title = "this is the title";
   obj.result = "this is an ajax result straight from the server :-)";
-  res.send(obj)
+  */
+  res.send(myJsonString)
 }
 
 module.exports.admin = function(req, res) {

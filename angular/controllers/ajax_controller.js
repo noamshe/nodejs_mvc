@@ -9,7 +9,7 @@ app.controller("ajaxController", function($scope, $http){
     var responsePromise = $http.get("/save_ajax_example");
 
     responsePromise.success(function(data, status, headers, config) {
-      $scope.myData.fromServer = data.result;
+      $scope.myData.fromServer = data;
     });
     responsePromise.error(function(data, status, headers, config) {
       alert("AJAX failed!");
