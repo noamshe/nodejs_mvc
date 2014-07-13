@@ -5,6 +5,7 @@
 module.exports = function(app) {
   var usersControllers = require('../controllers/users.js');
   var homeController = require('../controllers/home.js');
+  var loginController = require('../controllers/login.js');
 
   app.get('/', homeController.homePage);
   app.get('/newuser', usersControllers.newUser);
@@ -22,5 +23,7 @@ module.exports = function(app) {
   app.get('/save_ajax_example', usersControllers.save_ajax);
 
   app.get('/bootstrap', usersControllers.admin);
+  app.get('/login', loginController.loginPage);
+  app.post('/login', loginController.login);
 }
 

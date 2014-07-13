@@ -141,3 +141,4 @@ module.exports.admin = function(req, res) {
   // do something
   res.render('bootstrap', { title: '' });
 }
+
