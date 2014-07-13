@@ -25,5 +25,6 @@ module.exports = function(app) {
   app.get('/bootstrap', usersControllers.admin);
   app.get('/login', loginController.loginPage);
   app.post('/login', loginController.login);
+  app.post('/check_credentials', loginController.check_credentials);
 }
 

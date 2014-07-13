@@ -9,7 +9,8 @@ html(ng-app='MyAngularApp')
     //link(rel='stylesheet' href='stylesheets/bootstrap.css')
     script(src='http://code.jquery.com/jquery-1.10.1.min.js')
     script(src='/angular_app.js', type='text/javascript')
-    script(src='/controllers/login_controller.js', type='text/javascript')
+    script(src='/services/loginService.js', type='text/javascript')
+    script(src='/controllers/loginController.js', type='text/javascript')
   body
     form.form-signin(ng-submit="login()", ng-controller='LoginController')
       h2.form-signin-heading Please login
